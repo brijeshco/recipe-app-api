@@ -22,3 +22,6 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS('Database available!'))
 
 
+# Fix linting error: black line at end
+
+
