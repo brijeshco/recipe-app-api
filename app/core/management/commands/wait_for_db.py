@@ -20,8 +20,4 @@ class Command(BaseCommand):
                 time.sleep(1)
 
         self.stdout.write(self.style.SUCCESS('Database available!'))
-
-
 # Fix linting error: black line at end
-
-
