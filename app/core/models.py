@@ -1,13 +1,13 @@
-from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-
 """
 Database models.
 """
+from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, \
+     BaseUserManager, PermissionsMixin
+
 
 class UserManager(BaseUserManager):
     """Manager for user."""
-
     def create_user(self, email, password=None, **extra_fields):
         """Create and save a new user."""
         if not email:
@@ -34,5 +34,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
-
     USERNAME_FIELD = 'email'

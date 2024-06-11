@@ -4,6 +4,8 @@ from django.contrib.auth import get_user_model
 """
 Test for models
 """
+
+
 class ModelTest(TestCase):
     """Test models."""
 
@@ -15,7 +17,6 @@ class ModelTest(TestCase):
             email=email,
             password=password,
         )
-
         self.assertEqual(user.email, email)
         self.assertTrue(user.check_password(password))
 
@@ -42,6 +43,5 @@ class ModelTest(TestCase):
             'test@example.com',
             'test123'
         )
-
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
