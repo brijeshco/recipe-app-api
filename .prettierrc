@@ -1,0 +1,12 @@
+{
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "*.py",
+            "options": {
+                "useTabs": false,
+                "tabWidth": 4
+            }
+        }
+    ]
+}
