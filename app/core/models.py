@@ -1,7 +1,8 @@
+from django.db import models
+
 """
 Database models.
 """
-from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
   PermissionsMixin
 
@@ -18,13 +19,15 @@ class UserManager(BaseUserManager):
     user.save(using=self._db)
     return user
 
-  # def create_superuser(self, email, password):
-  #   """Create and save a new superuser."""
-  #   user = self.create_user(email, password)
-  #   user.is_staff = True
-  #   user.is_superuser = True
-  #   user.save(using=self._db)
-  #   return user
+  def create_superuser(self, email, password):
+    """Create and save a new superuser."""
+    user = self.create_user(email, password)
+    user.is_staff = True
+    user.is_superuser = True
+    user.save(using=self._db)
+    return user
+
+
 class User(AbstractBaseUser, PermissionsMixin):
   """User in the system."""
   email = models.EmailField(max_length=255, unique=True)
